@@ -15,8 +15,8 @@ def logar():
                 print(f'\nBem vindo ao chat {resposta.json()["nome"]}!!!\n')
                 return {'id': id_usuario, 'segredo': segredo}
             else:
-                print('Id e/ou senha inválido(s)!')
-                return False
+                print('\nId e/ou senha inválido(s)!\n')
+                return None
         except Exception as e:
             print(e)
             print('Erro: 404, Servidor fora do ar.')

@@ -5,14 +5,13 @@ def novo():
     try:
         resposta = req.post('http://localhost:6000/usr', json={'nome': nome})
         dados = resposta.json()
-        print(resposta)
-
         if resposta.status_code == 201:
             print('Cadastro realizado com Sucesso!')
             print(f'Seu id é {dados.get("id")}')
             print(f'Seu segredo é {dados.get("segredo")}')
             return {'id':dados.get("id"), 'segredo': dados.get("segredo")}
         else:
+            print(dados)
             return None
     except:
         print('Erro: 404, Servidor fora do ar.')

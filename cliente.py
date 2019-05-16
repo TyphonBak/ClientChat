@@ -12,7 +12,8 @@ while True:
     opcao = input('Digite uma opção: Entrar(1), Cadastrar(2), Listar Usuarios(3), Sair(0) \n')
     if opcao == '1':
         sessao = logar()
-        break
+        if sessao:
+            break
     elif opcao == '2':
         sessao = cadastrar()
         if sessao:
